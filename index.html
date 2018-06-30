@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Laura &amp; Andreas</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				<!-- One -->
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+						<div class="content">
+							<h1>Wedding</h1>
+							<p class="major">A (modular, highly tweakable) responsive one-page template designed by <a href="https://html5up.net">HTML5 UP</a> and released for free under the <a href="https://html5up.net/license">Creative Commons</a>.</p>
+							<ul class="actions stacked">
+								<li><a href="#first" class="button big wide smooth-scroll-middle">RSVP</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/banner.jpg" alt="" />
+						</div>
+					</section>
+
+				<!-- RSVP section -->
+					<section class="wrapper style1 align-left">
+						<div class="inner medium">
+							<h2>RSVP</h2>
+							<form name="submit-to-google-sheet">
+								<div class="fields">
+									<div class="field half">
+										<input autocomplete="given-name" type="text" name="firstname" id="firstname" placeholder="Firstname *" required />
+									</div>
+									<div class="field half">
+										<input autocomplete='family-name' type="text" name="lastname" id="lastname" placeholder="Lastname *" required />
+									</div>
+									<div class="field">
+										<input autocomplete='email' type="email" name="email" id="email" placeholder="Email *" required />
+									</div>
+									<div class="field">
+										<input type="checkbox" id="plusone" name="plusone">
+										<label for="plusone">I'm bringing a plus one</label>
+									</div>
+									<div class="field half">
+										<label for="dietary">Dietary Restrictions</label>
+										<textarea name="dietary" id="dietary" rows="3"></textarea>
+									</div>
+									<div class="field half">
+										<label for="message">Comments / Questions</label>
+										<textarea name="comments" id="comments" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions special">
+									<li><button class="button icon fa-paper-plane" type="submit" name="submit" id="submit">Send</button></li>
+								</ul>
+
+								<script>
+									const scriptURL = "https://script.google.com/macros/s/AKfycbxoA3pKtmRt1H-2rQEeo-Dy6Qrnu7IT1FtAeulKFRH_Tokujl5R/exec"
+									const form = document.forms['submit-to-google-sheet']
+									form.addEventListener('submit', e => {
+										e.preventDefault();
+
+										const buttonElement = document.getElementsByName("submit")[0];
+
+										buttonElement.classList.remove("fa-paper-plane");
+										buttonElement.classList.add("fa-spinner");
+
+										fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+											.then(response => {
+												console.log('Success!', response);
+
+												buttonElement.classList.remove("fa-spinner");
+												buttonElement.classList.add("fa-check-circle");
+												
+												buttonElement.disabled = true;
+											})
+											.catch(error => console.error('Error!', error.message));
+									})
+							</script>
+							</form>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer class="wrapper style1 align-center">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="mailto:amaechler+wedding@gmail.com" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
