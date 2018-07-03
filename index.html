@@ -6,19 +6,34 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<style>
+			.maps {
+				/* filter: grayscale(100%); */
+
+				border: 0;
+				height: 250px;
+				width: 100%;
+			}
+		</style>
 	</head>
+	
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
 
-				<!-- One -->
-					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+				<!-- Header -->
+					<section class="banner onload-image-fade-in onload-content-fade-down style5 fullscreen image-position-center color1 invert content-align-center">
+					
 						<div class="content">
-							<h1>Wedding</h1>
-							<p class="major">A (modular, highly tweakable) responsive one-page template designed by <a href="https://html5up.net">HTML5 UP</a> and released for free under the <a href="https://html5up.net/license">Creative Commons</a>.</p>
+							<h1>You're Invited!</h1>
+							<p class="major">
+								Please join us in celebrating the marriage of<br>
+								Laura Schoenberg &amp; Andreas Maechler.
+							</p>
 							<ul class="actions stacked">
-								<li><a href="#first" class="button big wide smooth-scroll-middle">RSVP</a></li>
+								<li><a href="#rsvp" class="button big wide smooth-scroll-middle">RSVP</a></li>
 							</ul>
 						</div>
 						<div class="image">
@@ -26,8 +41,47 @@
 						</div>
 					</section>
 
-				<!-- RSVP section -->
-					<section class="wrapper style1 align-left">
+				<!-- Time & Location -->
+					<section id="time" class="spotlight style1 orient-right content-align-left  onscroll-content-fade-in image-position-left">
+						<div class="content">
+							<h2>Time &amp; Location</h2>
+							<p>
+								Saturday, January 5, 2019 at 4 PM
+							</p>
+							<p>
+								Heritage Park, Gunn's Dairy Barn<br/>
+								1900 Heritage Drive SW<br/>
+								Calgary, AB
+							</p>
+							<iframe frameborder="0" class="maps" src="https://www.google.com/maps/embed/v1/place?q=Gunn's%20Dairy%20Barn%2C%20Heritage%20Park&key=AIzaSyACGT8Wa7371B2piA640ovyNeFqPf30J5I" allowfullscreen></iframe>
+						</div>
+						<div class="image">
+							<img src="images/spotlight01.jpg" alt="" />
+						</div>
+					</section>
+	
+				<!-- Other information -->
+					<section class="spotlight style1 orient-left content-align-left onscroll-content-fade-in image-position-left">
+						<div class="content">
+							<h2>Other Information</h2>
+							<p>
+								The ceremony will be held in the Gunn's Dairy Barn at 4:00 pm. There will be 
+								parking availale at Heritage Park. Dinner will be server shortly after the ceremony
+								and there will be a dance to follow.
+								
+								Your presence at our wedding is in itself all we require, however, if you wish to give a gift
+								we would be grateful for a small cash donation towards our future together.
+							</p>
+							<ul class="actions stacked">
+								<li><a href="#" class="button">Learn More</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/spotlight02.jpg" alt="" />
+						</div>
+					</section>
+				
+					<section id="rsvp" class="wrapper style1 align-left">
 						<div class="inner medium">
 							<h2>RSVP</h2>
 							<form name="submit-to-google-sheet">
@@ -47,11 +101,11 @@
 									</div>
 									<div class="field half">
 										<label for="dietary">Dietary Restrictions</label>
-										<textarea name="dietary" id="dietary" rows="3"></textarea>
+										<textarea name="dietary" id="dietary" rows="3" style="resize: none"></textarea>
 									</div>
 									<div class="field half">
 										<label for="message">Comments / Questions</label>
-										<textarea name="comments" id="comments" rows="3"></textarea>
+										<textarea name="comments" id="comments" rows="3" style="resize: none"></textarea>
 									</div>
 								</div>
 								<ul class="actions special">
@@ -91,6 +145,7 @@
 							<ul class="icons">
 								<li><a href="mailto:amaechler+wedding@gmail.com" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
 							</ul>
+							<p>Artwork: <a href="https://andreaarmstrong.com/">Andrea Armstrong</a>. Design based on <a href="https://html5up.net/story">Story</a>.</p>
 						</div>
 					</footer>
 
